@@ -1,16 +1,24 @@
-/* ======== ESTILOS CSS ======== */
+/* ======== ESTILOS CSS (Corrigido) ======== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+  background-color: #d1d1d1;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #d7993c;
+  background-color: #63625f;
   color: white;
-  text-align: center;
-  padding: 15px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 main {
@@ -23,7 +31,7 @@ main {
 }
 
 h2 {
-  color: #6f3403;
+  color: #97897b;
 }
 
 label {
@@ -36,32 +44,34 @@ input, select, button {
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box; /* Adicionado para corrigir a largura */
 }
 
 button {
-  background-color: #804b00;
+  background-color: #97897b;
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #cc6d00;
+  background-color: #72706e;
 }
 
 button:disabled {
-  background-color: #999;
+  background-color: #97897b;
   cursor: not-allowed;
 }
 
 .resultado {
-  background: #eef;
-  border: 1px solid #cd7400;
+  background: rgb(208, 208, 208);
+  border: 1px solid #97897b;
   padding: 10px;
   border-radius: 8px;
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
     #dataHora {
       background: #b3781b;
       font-weight: bold;
@@ -73,3 +83,28 @@ button:disabled {
       right: 16px;
       font-size: 20px;
     }
+=======
+#dataHora {
+  background: #525252;
+  font-weight: bold;
+  color: #f0f409;
+  border: 1px solid #000000;
+  padding: 10px;
+  margin-top: 15px;
+  position: absolute;
+  right: 16px;
+  top: 0; /* Adicionado para alinhar com o topo */
+  font-size: 20px;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+#logo {
+  height: 76px;
+  width: auto;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+>>>>>>> 765f3dfb69a90bacb1161f362a6dd99ff4759e73

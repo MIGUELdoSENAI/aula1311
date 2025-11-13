@@ -37,6 +37,9 @@ function abrirConta() {
   
   movimentacoes = []; // limpa movimentações anteriores
   
+  // 🔹 Registra automaticamente o nome do cliente no extrato
+  extratoDaConta();
+  
   // Mensagem de sucesso
   document.getElementById("resConta").innerHTML =
     `✅ Conta <strong>${tipo}</strong> criada com sucesso para <strong>${nome}</strong>.`;
@@ -75,7 +78,7 @@ function depositar() {
   conta.saldo += valor;
   
   // Registra movimentação com data/hora
-  movimentacoes.push(`${obterDataHoraAtual()} Depósito de R$ ${valor.toFixed(2)}`);
+  movimentacoes.push(`${obterDataHoraAtual()} ${conta.nomeCliente} realizou um Depósito de R$ ${valor.toFixed(2)}`);
   
   document.getElementById("resOperacoes").innerHTML =
     `💰 Depósito realizado! Saldo atual: <strong>R$ ${conta.saldo.toFixed(2)}</strong>`;
@@ -102,7 +105,7 @@ function sacar() {
   conta.saldo -= valor;
   
   // Registra movimentação com data/hora
-  movimentacoes.push(`${obterDataHoraAtual()} Saque de R$ ${valor.toFixed(2)}`);
+  movimentacoes.push(`${obterDataHoraAtual()} ${conta.nomeCliente} realizou um Saque de R$ ${valor.toFixed(2)}`);
   
   document.getElementById("resOperacoes").innerHTML =
     `💸 Saque realizado! Saldo atual: <strong>R$ ${conta.saldo.toFixed(2)}</strong>`;
@@ -175,17 +178,28 @@ setInterval(() => {
 }, 1000);
 
 /* -----------------------------------------------------------
-Função que registra automaticamente o nome do cliente na lista de movimentações ao abrir a conta
+Função que registra automaticamente o nome do cliente
+na lista de movimentações ao abrir a conta
 ------------------------------------------------------------ */
-    function atualizarDataHora() {
-      const agora = new Date();
-      const data = agora.toLocaleDateString('pt-BR');
-      const hora = agora.toLocaleTimeString('pt-BR');
-      document.getElementById('dataHora').textContent = `${data} - ${hora}`;
-    }
+function extratoDaConta() {
+  if (conta && conta.ativa) {
+    movimentacoes.push(
+      `${obterDataHoraAtual()} Conta aberta para ${conta.nomeCliente} (tipo: ${conta.tipoConta})`
+    );
+  }
+}
 
-    atualizarDataHora(); // Atualiza imediatamente ao carregar
-    setInterval(atualizarDataHora, 1000); // Atualiza a cada 1 segundo
+/*Função para exibir o horário no sistema */
+function atualizarDataHora() {
+  const agora = new Date();
+  const data = agora.toLocaleDateString('pt-BR');
+  const hora = agora.toLocaleTimeString('pt-BR');
+  document.getElementById('dataHora').textContent = `${data} - ${hora}`;
+}
+
+atualizarDataHora();
+setInterval(atualizarDataHora, 1000);
+
 /* -----------------------------------------------------------
 Função auxiliar que verifica se há conta ativa
 ------------------------------------------------------------ */

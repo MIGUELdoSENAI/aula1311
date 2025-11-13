@@ -55,7 +55,7 @@ button:disabled {
 }
 
 .resultado {
-  background: #eef;
+  background: rgb(208, 208, 208);
   border: 1px solid #97897b;
   padding: 10px;
   border-radius: 8px;
@@ -72,4 +72,5 @@ button:disabled {
       position: absolute;
       right: 16px;
       font-size: 20px;
+      border-radius: 12px;
     }

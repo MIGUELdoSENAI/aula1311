@@ -165,6 +165,28 @@ function encerrarConta() {
 }
 
 /* ------------------------------------------------------------
+Relógio para exibir data/hora atual na interface
+------------------------------------------------------------ */
+setInterval(() => {
+  const agora = new Date();
+  const data = agora.toLocaleDateString('pt-BR');
+  const hora = agora.toLocaleTimeString('pt-BR');
+  document.getElementById("relogio").innerText = `${data} ${hora}`;
+}, 1000);
+
+/* -----------------------------------------------------------
+Função que registra automaticamente o nome do cliente na lista de movimentações ao abrir a conta
+------------------------------------------------------------ */
+    function atualizarDataHora() {
+      const agora = new Date();
+      const data = agora.toLocaleDateString('pt-BR');
+      const hora = agora.toLocaleTimeString('pt-BR');
+      document.getElementById('dataHora').textContent = `${data} - ${hora}`;
+    }
+
+    atualizarDataHora(); // Atualiza imediatamente ao carregar
+    setInterval(atualizarDataHora, 1000); // Atualiza a cada 1 segundo
+/* -----------------------------------------------------------
 Função auxiliar que verifica se há conta ativa
 ------------------------------------------------------------ */
 function contaAtiva() {

@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #d7993c;
+  background-color: #63625f;
   color: white;
   text-align: center;
   padding: 15px;
@@ -23,7 +23,7 @@ main {
 }
 
 h2 {
-  color: #6f3403;
+  color: #97897b;
 }
 
 label {
@@ -39,31 +39,31 @@ input, select, button {
 }
 
 button {
-  background-color: #804b00;
+  background-color: #97897b;
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #cc6d00;
+  background-color: #97897b;
 }
 
 button:disabled {
-  background-color: #999;
+  background-color: #97897b;
   cursor: not-allowed;
 }
 
 .resultado {
   background: #eef;
-  border: 1px solid #cd7400;
+  border: 1px solid #97897b;
   padding: 10px;
   border-radius: 8px;
   margin-top: 15px;
 }
 
     #dataHora {
-      background: #b3781b;
+      background: #97897b;
       font-weight: bold;
       color: #f0f409;
       border: 1px solid #000000;
